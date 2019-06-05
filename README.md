@@ -11,10 +11,10 @@
 * Freedom of movement with keyboard controls
 
 ## Important
-To run locally, please check:
-1. Create a virtual enviroment: `Python3 -m venv venv`
-2. Install from my requirements.txt by:
-`pip install -r requirements.txt`
+To run locally, please:
+1. `git clone https://github.com/hcheung01/virtual_world.git`
+2. `cd into directory`
+3. `pip install -r requirements.txt`
 
 ## How to play
 To start game
