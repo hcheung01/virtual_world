@@ -2,11 +2,12 @@
 
 ## Description and features:
 * Able to randomly generate a scalable virtual world(Diablo style) with keyboard support!
-* User can choose how many levels to create and to go up and down
+* Blocks data structures is ready to be implemented with User objects from/to REST API to/from databases 
+* User can choose how many levels to create and move up and down between levels
 * User can choose N by N size for each level
-* Each block is guarantee to have different items and non repeating
-* Each block is guarantee to have different people
-* Each block is guarantee to be randomly generated for Solid or Transparent type
+* Each block is guarantee to generate unique items
+* Each block is guarantee to generate unique list of people objects for simulation before implementing real user class defined objects from model/schema/database
+* Each block is guarantee to randomize selection between Solid or Transparent block type
 * When moving to next block, realtime information will display
 * Freedom of movement with keyboard controls
 
@@ -50,6 +51,7 @@ L/R CTRL - Down one level
   - History model - primary key, foreign key as user_id, dialog_history, move_history 
   - Room model - primary key, level, row, column, state(Transparent or Block), descriptions, items 
 * Mapped current working keyboard function so when users move to new block, POST request to database and update location.
+* Implement algorithm to send GET request for info within one - two unit radius of user block location
 
 ## Files
 ------

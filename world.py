@@ -50,6 +50,7 @@ class World():
     """
 
     print('\n\n\n\n\n\n\n\n\n\nYOU START ON SOUTHSIDE FIRST LEVEL...\n')
+    print("Controls: \n Arrows: up, down, left, right\n Levels up\down: shift, ctrl")
     position_indicator = '^'
     if previous_location:
       x, y, z = previous_location.values()
