@@ -1,6 +1,6 @@
+#!/usr/bin/env python3
 from world import World
 from pynput.keyboard import Key, Listener
-
 
 levels = int(input("How many levels? "))
 size = int(input("How big for each level? N X N "))

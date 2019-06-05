@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from room import Room
 import random
 
