@@ -20,7 +20,7 @@ This game was created with `Python-3.7.3` To run locally, please:
 
 ## How to play
 To start game
-`./movement.py` or `python3 movement.py`
+`./run.py` or `python3 run.py`
 
 1. Pick how many levels
 2. Pick how many rows X column per level
