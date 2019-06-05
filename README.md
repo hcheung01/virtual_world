@@ -11,10 +11,12 @@
 * Freedom of movement with keyboard controls
 
 ## Important
-To run locally, please:
+This game was created with `Python-3.7.3` To run locally, please:
+
+
 1. `git clone https://github.com/hcheung01/virtual_world.git`
 2. `cd into directory`
-3. `pip install -r requirements.txt`
+3. `pip3 install -r requirements.txt`
 
 ## How to play
 To start game
@@ -73,7 +75,7 @@ virtualgame/ | Main directory with all python files
 
 ## More Info for Python programs
 * PEP 8 formatted
-* Python Scripts - first line of every file is exactly be exactly 
+* Python Scripts - first line of every file is
 * `#!/usr/bin/env python3` and executable
 
 ## Author

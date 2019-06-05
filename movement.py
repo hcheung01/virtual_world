@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
+"""
+Script to run program
+"""
 from world import World
 from pynput.keyboard import Key, Listener
+
 
 levels = int(input("How many levels? "))
 size = int(input("How big for each level? N X N "))
@@ -18,8 +22,9 @@ start_position = {
 
 def room_type_checker(next_location):
   """
-    Check if room is suppose to be blocked
+  Check if room is suppose to be blocked
   """
+
   if next_location:
     x, y, z = next_location
     if w.table[x][y][z].roomType is 'Solid':
@@ -28,8 +33,9 @@ def room_type_checker(next_location):
 
 def output(prev_location, command, size):
   """
-    Give instant block location updates from the mapped table of objects
+  Give instant block location updates from the mapped table of objects
   """
+
   w.starting_location = start_position
   w.printTable(prev_location, size)
   x, y, z = start_position.values()
@@ -49,35 +55,36 @@ keys = {
 }
 
 def on_press(key):
-    # print(type(key))
-    # print('{0} pressed'.format(
-    #     key))
-    pass
-def on_release(key):
-    # print('{0} release'.format(
-    #     key))
-    if key == Key.esc:
-        # Stop listener
-        return False
+  """
+  Record on key press event
+  """
 
-    if key in keys:
-      command = keys[key]
-      prev_location = start_position.copy()
-      if command is 'NORTH' and start_position['row'] < size - 1:
-        start_position['row'] += 1
-      elif command is 'SOUTH' and start_position['row'] > 0:
-        start_position['row'] -= 1
-      elif command is 'WEST' and start_position['column'] > 0:
-        start_position['column'] -= 1
-      elif command is 'EAST' and start_position['column'] < size - 1:
-        start_position['column'] += 1
-      elif command is 'UP' and start_position['level'] < levels - 1:
-        start_position['level'] += 1
-      elif command is 'DOWN' and start_position['level'] > 0:
-        start_position['level'] -= 1
-      output(prev_location, command, size)
-      # check_room = room_type_checker(start_position.values())
-      # print(check_room)
+  pass
+
+def on_release(key):
+  """
+  record key release event and update player position
+  """
+
+  if key == Key.esc:
+      # Stop listener
+      return False
+  if key in keys:
+    command = keys[key]
+    prev_location = start_position.copy()
+    if command is 'NORTH' and start_position['row'] < size - 1:
+      start_position['row'] += 1
+    elif command is 'SOUTH' and start_position['row'] > 0:
+      start_position['row'] -= 1
+    elif command is 'WEST' and start_position['column'] > 0:
+      start_position['column'] -= 1
+    elif command is 'EAST' and start_position['column'] < size - 1:
+      start_position['column'] += 1
+    elif command is 'UP' and start_position['level'] < levels - 1:
+      start_position['level'] += 1
+    elif command is 'DOWN' and start_position['level'] > 0:
+      start_position['level'] -= 1
+    output(prev_location, command, size)
 
 # Collect events until released
 with Listener(
